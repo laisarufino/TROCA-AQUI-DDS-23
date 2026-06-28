@@ -14,16 +14,27 @@ module.exports = {
         try{
             // Pega as infomações das caixinhas da view, de acordo com o name delas
             const { email, senha } = req.body
-            
+
+            // Validação dos campos obrigatórios
+            if (!email || !senha) {
+                return res.status(400).render('erro', { mensagem: "Email e senha são obrigatórios" })
+            }
+
             // Executa a função de busca no model
             const usuario = await usuarioModel.buscarPorEmail(email)
             // Se não existir, mensagem de erro
-            if (!usuario) return res.status(404).render('erro', { mensagem: "Credenciais inválidas"})
+            if (!usuario) return res.status(401).render('erro', { mensagem: "Credenciais inválidas"})
 
             // compara a senha que o usuário digitou, com a senha do usuario retornado no banco
             const senhaValida = await bcrypt.compare(senha, usuario.senha)
             // Se senhas não coincidirem, mensagem de erro
-            if (!senhaValida) return res.status(404).render('erro', { mensagem: "Credenciais inválidas"})
+            if (!senhaValida) return res.status(401).render('erro', { mensagem: "Credenciais inválidas"})
+
+            // Verifica se JWT_SECRET está configurado
+            if (!process.env.JWT_SECRET) {
+                console.error("JWT_SECRET não está definido nas variáveis de ambiente")
+                return res.status(500).render('erro', { mensagem: "Erro de configuração do servidor" })
+            }
 
             // Gera o token de acesso, contendo o perfil 
             const token = jwt.sign(
@@ -39,17 +50,27 @@ module.exports = {
             if(usuario.perfil === "administrador") return res.redirect("/usuarios")
             if(usuario.perfil === "ofertante") return res.redirect("/produtos/meus-produtos")
             if(usuario.perfil === "interessado") return res.redirect("/produtos/vitrine")
+
+            // Perfil não reconhecido
+            console.error("Perfil de usuário não reconhecido:", usuario.perfil)
+            return res.status(403).render('erro', { mensagem: "Perfil de usuário não reconhecido" })
         }
         catch(erro){
+            console.error("Erro no login:", erro.message)
             res.status(500).render('erro', { mensagem: "Erro interno no servidor"})
         }
     },
 
     logout: (req,res) =>{
-        //Limpa o token dos cookies
-        res.clearCookie('token')
-        // Volta pra tela de login
-        res.redirect("/login")
+        try {
+            //Limpa o token dos cookies
+            res.clearCookie('token')
+            // Volta pra tela de login
+            res.redirect("/login")
+        } catch (erro) {
+            console.error("Erro no logout:", erro.message)
+            res.status(500).render('erro', { mensagem: "Erro ao realizar logout" })
+        }
     }
 
 }
