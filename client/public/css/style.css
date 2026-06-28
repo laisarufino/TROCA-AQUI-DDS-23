@@ -1,8 +1,15 @@
-/* *{
-    background-color: orange;
-    margin: 10px;
+header {
+    background-color: black;
+    height: 300px;
+    width: 100%;
 }
 
-body{
-    background-color: aquamarine;
-} */
+footer {
+    background-color: red;
+    height: 150px;
+    width: 100%;
+}
+
+.page-main {
+    height: 300px;
+}
