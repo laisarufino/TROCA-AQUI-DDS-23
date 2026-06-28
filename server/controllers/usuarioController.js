@@ -33,7 +33,12 @@ module.exports = {
             )
 
             // Guardar o token nos cookies do navegador
-            res.cookie('token', token, { httpOnly: true })
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'strict',
+                maxAge: 2 * 60 * 60 * 1000 // 2 horas (mesmo tempo do JWT)
+            })
 
             // Redirecionamento de acordo com o perfil
             if(usuario.perfil === "administrador") return res.redirect("/usuarios")

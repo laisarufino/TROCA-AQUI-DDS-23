@@ -15,12 +15,12 @@ DROP TABLE IF EXISTS interesses;
 -- Tabela usuários
 CREATE TABLE usuarios(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	nome VARCHAR(100),
-    email VARCHAR(100),
-    senha VARCHAR(255),
+	nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
     telefone VARCHAR(20),
     foto VARCHAR(255),
-    perfil ENUM('administrador', 'ofertante', 'interessado')
+    perfil ENUM('administrador', 'ofertante', 'interessado') NOT NULL
 );
 
 -- Tabela produtos
@@ -48,7 +48,6 @@ CREATE TABLE interesses(
     FOREIGN KEY (id_interessado) REFERENCES usuarios(id) ON DELETE CASCADE 
 );
 
--- senha: greg
 -- INSERTS DE USUÁRIOS
 -- ADM
 INSERT INTO usuarios(nome, email, senha, telefone, perfil)

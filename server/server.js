@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 // módulo do node para lidar com caminho de arquivos
 const path = require("path");
+// módulo de segurança para headers HTTP
+const helmet = require("helmet");
 
 // Importa o módulo do dotenv, lê o arquivo .env, e já configura inicialmente
 require('dotenv').config()
@@ -10,6 +12,10 @@ require('dotenv').config()
 // Define a porta do servidor com base nas variáveis de ambiente
 // Se der errado, e porte será a 5000
 const port = process.env.PORT || 5000;
+
+// MIDDLEWARE DE SEGURANÇA
+// Configura headers HTTP de segurança (CSP, X-Frame-Options, etc.)
+app.use(helmet())
 
 // MIDDLEWARE PARA ENTENDER O JSON
 // Lê os dados em JSON
