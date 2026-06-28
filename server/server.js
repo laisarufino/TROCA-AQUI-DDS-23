@@ -49,11 +49,32 @@ const usuariosRoutes = require("./routes/usuarioRoutes.js");
 // Requisições comecando com /usuarios é gerenciada pelo sub-arquivo de rotas
 app.use("/usuarios", usuariosRoutes);
 
-// //Função para subir o servidor
-// app.listen(port, () => {
-//   console.log(`Servidor ativo na porta: ${port}`);
-//   console.log(`Link: http://localhost:${port}`);
-// });
+// MIDDLEWARE DE TRATAMENTO DE ERROS GLOBAL
+// Rota para páginas não encontradas (404)
+app.use((req, res) => {
+  res.status(404).render('erro', { mensagem: "Página não encontrada" })
+});
+
+// Middleware de erro global - captura erros não tratados nas rotas
+app.use((erro, req, res, next) => {
+  console.error("Erro não tratado:", erro.message)
+  console.error("Stack:", erro.stack)
+  res.status(500).render('erro', { mensagem: "Erro interno no servidor" })
+});
+
+// TRATAMENTO DE ERROS DE PROCESSO
+// Captura promessas rejeitadas não tratadas
+process.on('unhandledRejection', (reason, promise) => {
+  console.error("Rejeição não tratada em:", promise)
+  console.error("Motivo:", reason)
+});
+
+// Captura exceções não tratadas
+process.on('uncaughtException', (erro) => {
+  console.error("Exceção não capturada:", erro.message)
+  console.error("Stack:", erro.stack)
+  process.exit(1)
+});
 
 // Traz as configurações do banco
 const pool = require("./config/db.js");
@@ -61,7 +82,8 @@ const pool = require("./config/db.js");
 (async () => {
   try {
     // Se o banco de dados estiver ativo, ai sim o servidor será iniciado
-    await pool.getConnection();
+    const connection = await pool.getConnection();
+    connection.release();
     console.log("Banco conectado");
     // Se o banco de dados estiver ativo, ai sim o servidor será iniciado
     app.listen(port, () => {
@@ -69,8 +91,9 @@ const pool = require("./config/db.js");
       console.log(`Servidor funcionando na porta ${port}`);
     });
   } catch (erro) {
-    // Se deu erro, avisa e encerra a tentativa
-    console.log("Erro ao tentar conectar com o banco de dados");
-    process.exit(1);
+    // Se deu erro, avisa com detalhes e encerra a tentativa
+    console.error("Erro ao tentar conectar com o banco de dados:", erro.message)
+    console.error("Verifique se o banco está rodando e as variáveis de ambiente estão corretas")
+    process.exit(1)
   }
 })();
