@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeekCon Brasil 2026</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> GeekCon</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="atracoes.html">Atracoes</a></li>
+          <li><a href="cronograma.html">Cronograma</a></li>
+          <li><a href="cadastro.html">Pre-Cadastro</a></li>
+        </ul>
+      </nav>
+      <!-- Botao de tema -->
+      <button class="theme-btn" id="themeToggle" aria-label="Alternar tema">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- BANNER / HERO -->
+  <section id="banner" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="hero-tag"><i class="fa-solid fa-rocket"></i> 15 a 18 de Outubro de 2026</p>
+      <h1>GeekCon Brasil <span class="highlight">2026</span></h1>
+      <p class="hero-desc">O maior encontro de cultura geek do Brasil! Anime, games, cosplay, HQs, tecnologia e muito mais reunidos em 4 dias de pura diversao no Expo Center Norte, Sao Paulo.</p>
+      <div class="hero-btns">
+        <a href="cadastro.html" class="btn btn-primary"><i class="fa-solid fa-ticket"></i> Inscreva-se</a>
+        <a href="atracoes.html" class="btn btn-outline"><i class="fa-solid fa-star"></i> Ver Atracoes</a>
+      </div>
+      <!-- Contador de inscritos -->
+      <div class="contador-box" id="contadorBox">
+        <p><i class="fa-solid fa-users"></i> Inscritos: <strong id="contadorNumero">150</strong></p>
+        <button class="btn btn-accent" id="btnParticipar"><i class="fa-solid fa-hand-point-up"></i> Participar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRICAO DO EVENTO -->
+  <section id="descricao" class="section">
+    <div class="container">
+      <h2 class="section-title"><i class="fa-solid fa-info-circle"></i> Sobre o Evento</h2>
+      <div class="descricao-grid">
+        <div class="desc-card">
+          <div class="desc-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <h3>4 Dias de Evento</h3>
+          <p>De quinta a domingo, com atracoes do manha ate a noite. Cada dia com uma programacao especial!</p>
+        </div>
+        <div class="desc-card">
+          <div class="desc-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3>+50 Atracoes</h3>
+          <p>Paineis, workshops, competicoes de cosplay, torneios de games, sessoes de autografos e muito mais.</p>
+        </div>
+        <div class="desc-card">
+          <div class="desc-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3>Expo Center Norte</h3>
+          <p>Um dos maiores centros de eventos de Sao Paulo, com facil acesso por metro e estacionamento.</p>
+        </div>
+        <div class="desc-card">
+          <div class="desc-icon"><i class="fa-solid fa-earth-americas"></i></div>
+          <h3>Convidados Internacionais</h3>
+          <p>Artistas, dubladores e criadores de conteudo vindos do Japao, EUA e Europa especialmente para voce!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fa-solid fa-fire"></i> Destaques</h2>
+      <div class="destaques-flex">
+        <div class="destaque-item">
+          <i class="fa-solid fa-gamepad destaque-icone"></i>
+          <h3>Arena eSports</h3>
+          <p>Torneios de League of Legends, Valorant e Street Fighter com premiacoes!</p>
+        </div>
+        <div class="destaque-item">
+          <i class="fa-solid fa-mask destaque-icone"></i>
+          <h3>Desfile Cosplay</h3>
+          <p>Concurso com jurados internacionais e premios especiais para as melhores fantasias.</p>
+        </div>
+        <div class="destaque-item">
+          <i class="fa-solid fa-microphone destaque-icone"></i>
+          <h3>Paineis Exclusivos</h3>
+          <p>Bate-papos com criadores de anime, mangakas e desenvolvedores de jogos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPE -->
+  <footer id="rodape" class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> GeekCon</a>
+        <p>Conectando a comunidade geek brasileira desde 2024.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegacao</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="atracoes.html"><i class="fa-solid fa-star"></i> Atracoes</a></li>
+          <li><a href="cronograma.html"><i class="fa-solid fa-clock"></i> Cronograma</a></li>
+          <li><a href="cadastro.html"><i class="fa-solid fa-user-plus"></i> Pre-Cadastro</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i> contato@geekcon.com.br</a></li>
+          <li><a href="#"><i class="fa-solid fa-phone"></i> (11) 99999-0000</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Sao Paulo, SP</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GeekCon Brasil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

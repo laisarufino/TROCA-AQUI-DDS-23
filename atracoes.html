@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atracoes - GeekCon Brasil 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> GeekCon</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="atracoes.html" class="active">Atracoes</a></li>
+          <li><a href="cronograma.html">Cronograma</a></li>
+          <li><a href="cadastro.html">Pre-Cadastro</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" id="themeToggle" aria-label="Alternar tema">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <h1><i class="fa-solid fa-star"></i> Atracoes</h1>
+      <p>Confira as atracoes confirmadas para o GeekCon Brasil 2026!</p>
+    </div>
+  </section>
+
+  <!-- ATRACOES -->
+  <section class="section">
+    <div class="container">
+      <div class="atracoes-grid">
+
+        <!-- Atracao 1 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #6c3483;">
+            <i class="fa-solid fa-dragon atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-microphone-lines"></i> Hironobu Sakaguchi</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Painel Especial</p>
+            <p class="atracao-resumo">Criador da serie Final Fantasy em um bate-papo exclusivo sobre o futuro dos RPGs japoneses.</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info1">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info1">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 15 de Outubro, 14h</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Palco Principal</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> 1h30</p>
+              <p>Hironobu Sakaguchi, o lendario criador de Final Fantasy, fara uma palestra sobre 40 anos de RPGs japoneses, seguida de sessao de perguntas e respostas com o publico. Oportunidade unica de conhecer a mente por tras de uma das maiores franquias dos games!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atracao 2 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #1a5276;">
+            <i class="fa-solid fa-trophy atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-gamepad"></i> Torneio eSports Valorant</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Competicao</p>
+            <p class="atracao-resumo">Grande final do campeonato nacional de Valorant com premiacoes de ate R$ 50.000!</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info2">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info2">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 16 e 17 de Outubro</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Arena eSports</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> 2 dias</p>
+              <p>Os 8 melhores times do Brasil se enfrentam na grande final! Telao gigante, comentaristas ao vivo e premiacoes incriveis. Traga sua torcida!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atracao 3 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #b7950b;">
+            <i class="fa-solid fa-mask atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Concurso Cosplay Internacional</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Concurso</p>
+            <p class="atracao-resumo">Desfile e competicao de cosplay com jurados internacionais e premios exclusivos!</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info3">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info3">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 17 de Outubro, 18h</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Palco Principal</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> 3h</p>
+              <p>Mais de 30 cosplayers profissionais competindo em categorias como Melhor Armadura, Melhor Performance e Melhor em Show. Jurados incluem cosplayers renomados do Japao e dos EUA. O grande vencedor representa o Brasil no World Cosplay Summit!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atracao 4 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #1e8449;">
+            <i class="fa-solid fa-laptop-code atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-code"></i> Hackathon GeekCode</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Tecnologia</p>
+            <p class="atracao-resumo">48 horas de programacao: crie um jogo, app ou ferramenta geek e concorra a premios!</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info4">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info4">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 15 a 17 de Outubro</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Lab Tech</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> 48h</p>
+              <p>Forme sua equipe e participe do Hackathon GeekCode! O tema sera revelado na abertura. Mentores especializados estarao disponiveis durante todo o evento. Premios incluem notebooks, consoles e cursos online.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atracao 5 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #c0392b;">
+            <i class="fa-solid fa-book-open atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-pen-nib"></i> Beco dos Quadrinhos</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Exposicao</p>
+            <p class="atracao-resumo">Area dedicada a artistas independentes, editoras e sessoes de autografos com quadrinistas.</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info5">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info5">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 15 a 18 de Outubro</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Hall B</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> Todos os dias</p>
+              <p>Mais de 100 stands de artistas e editoras! Lancamentos exclusivos, prints, originais e sessoes de autografos com grandes nomes dos quadrinhos nacionais e internacionais. Area kids com oficinas de desenho.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atracao 6 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #8e44ad;">
+            <i class="fa-solid fa-film atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-clapperboard"></i> Maratona Anime</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Exibicao</p>
+            <p class="atracao-resumo">Pre-estreias de animes da temporada 2027, exibicoes especiais e debate com dubladores brasileiros.</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info6">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info6">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 16 de Outubro, 10h</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Sala Cinema</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> Dia inteiro</p>
+              <p>Assista em primeira mao aos primeiros episodios dos animes mais aguardados de 2027! Apos cada exibicao, bate-papo com dubladores e produtores. Sessao especial do novo filme de Makoto Shinkai a noite.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atracao 7 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #2e86c1;">
+            <i class="fa-solid fa-music atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-headphones"></i> Show: Banda Animetal</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Show Musical</p>
+            <p class="atracao-resumo">Show especial com covers de aberturas de anime em versao heavy metal! Repertorio classico e moderno.</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info7">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info7">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 18 de Outubro, 20h</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Palco Principal</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> 2h</p>
+              <p>Encerramento epico do GeekCon! A banda Animetal traz um setlist com aberturas classicas de Dragon Ball, Naruto, One Piece e muito mais em versao rock/metal. Area VIP disponivel para quem fizer pre-cadastro.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atracao 8 -->
+        <div class="atracao-card">
+          <div class="atracao-img" style="background-color: #d4ac0d;">
+            <i class="fa-solid fa-vr-cardboard atracao-icon"></i>
+          </div>
+          <div class="atracao-info">
+            <h3><i class="fa-solid fa-robot"></i> Experiencia VR Zone</h3>
+            <p class="atracao-tipo"><i class="fa-solid fa-tag"></i> Interativo</p>
+            <p class="atracao-resumo">Zona de realidade virtual com demos exclusivos de jogos ainda nao lancados e simuladores!</p>
+            <button class="btn btn-secondary btn-toggle" data-target="info8">
+              <i class="fa-solid fa-eye"></i> Mais Informacoes
+            </button>
+            <div class="atracao-extra" id="info8">
+              <p><i class="fa-solid fa-calendar"></i> <strong>Data:</strong> 15 a 18 de Outubro</p>
+              <p><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Hall C - VR Zone</p>
+              <p><i class="fa-solid fa-clock"></i> <strong>Duracao:</strong> Todos os dias, 10h-20h</p>
+              <p>Experimente os ultimos lancamentos em realidade virtual! Demos exclusivos de grandes estudio, simuladores de corrida e voo, e experiencias imersivas de anime. Sessoes de 15 minutos por visitante.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPE -->
+  <footer id="rodape" class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> GeekCon</a>
+        <p>Conectando a comunidade geek brasileira desde 2024.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegacao</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="atracoes.html"><i class="fa-solid fa-star"></i> Atracoes</a></li>
+          <li><a href="cronograma.html"><i class="fa-solid fa-clock"></i> Cronograma</a></li>
+          <li><a href="cadastro.html"><i class="fa-solid fa-user-plus"></i> Pre-Cadastro</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i> contato@geekcon.com.br</a></li>
+          <li><a href="#"><i class="fa-solid fa-phone"></i> (11) 99999-0000</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Sao Paulo, SP</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GeekCon Brasil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
